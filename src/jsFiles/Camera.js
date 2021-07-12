@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import "../stylesheets/style.css";
+import "../resources/stylesheets/Camera.css";
 
-const App = () => {
+const Camera = () => {
     const videoRef = useRef(null);
     const photoRef = useRef(null);
     const stripRef = useRef(null);
@@ -37,11 +37,11 @@ const App = () => {
 
             ctx.drawImage(video, 0, 0, width, height);
             let pixels = ctx.getImageData(0, 0, width, height);
-
+/*
             color.style.backgroundColor = `rgb(${pixels.data[0]},${pixels.data[1]},${pixels.data[2]
                 })`;
             color.style.borderColor = `rgb(${pixels.data[0]},${pixels.data[1]},${pixels.data[2]
-                })`;
+                })`;*/
         }, 200);
     };
 
@@ -62,10 +62,7 @@ const App = () => {
     return (
         <div className="container">
             <div ref={colorRef} className="scene">
-                <img
-                    className="mountains"
-                    src="https://i.ibb.co/RjYk1Ps/2817290-eps-1.png"
-                />
+               
             </div>
             <div className="webcam-video"> 
                 <button onClick={() => takePhoto()}   className="take-btn mt-5 pd-5">Take a photo</button>
@@ -83,4 +80,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Camera;

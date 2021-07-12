@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player ,.photo{
+    transform: rotateY(180deg);
+}
+
+.photo-booth {
+    position: absolute;
+    bottom: 0;
+}

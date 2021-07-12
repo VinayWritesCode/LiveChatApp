@@ -3,7 +3,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    background: #0f111a;
+    z-index: 200;
 }
 
 p {
@@ -11,7 +12,7 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    color: rgb(112, 102, 102);
 }
 
 a, a:hover, a:focus {
@@ -21,25 +22,44 @@ a, a:hover, a:focus {
 }
 
 .Camera img {
-    width:50px;
-     height: 50px;
+     width:40px;
+     height: 40px;
+     background-color:rgb(240, 239, 243);
+     border-radius: 10px;
+     margin: 10px;
+     
+}
+
+.Camera img:hover {
+    background-color: rgb(211, 204, 228);
+}
+
+
+
+
+#Copyright {
+    font-size: 12px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    place-content: center;
+    margin-left: -8px;
 }
 
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
-    background: #7386D5;
+    background: #121831;
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #080a11;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #080a11;
 }
 
 #sidebar ul p {
@@ -53,18 +73,18 @@ a, a:hover, a:focus {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: #c7d8e0;
+    background: rgb(33, 20, 70);
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #57303b;
 }
 ul ul a {
     font-size: 0.9em ;
     padding-left: 30px ;
-    background: #6d7fcc;
+    background: #572834;
 }
 
 .wrapper {
@@ -74,15 +94,18 @@ ul ul a {
 }
 
 #sidebar {
-    margin-left: -225px;
-}
-
-#sidebar.active {
+    margin-left: -18.5vw;
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
+}
+
+#sidebar.active {
+
     margin-left: 0;
 }
+
+
 
 a[data-toggle="collapse"] {
     position: relative;
@@ -102,12 +125,13 @@ a[data-toggle="collapse"] {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -31.5vw;
     }
     #sidebar.active {
         margin-left: 0;
     }
 }
+
 
