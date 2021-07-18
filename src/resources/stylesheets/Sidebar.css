@@ -88,6 +88,8 @@ ul ul a {
 }
 
 .wrapper {
+    position: fixed;
+    overflow-y: scroll;
     display: flex;
     width: 100%;
     align-items: stretch;
@@ -123,15 +125,38 @@ a[data-toggle="collapse"] {
     transform: translateY(-50%);
 }
 
-
-
-@media (max-width: 800px) {
+@media (max-width: 400px) {
     #sidebar {
-        margin-left: -31.5vw;
+        margin-left: -67%;
     }
     #sidebar.active {
         margin-left: 0;
     }
 }
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -33%;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+
+
+
+@media (max-width: 600px) {
+    #sidebar {
+        margin-left: -60%;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+
+
+
 
 

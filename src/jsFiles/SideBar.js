@@ -54,6 +54,7 @@ function SideBar() {
                         <Route exact path="/Camera" component={Camera} />
                         <Redirect to="/" />
                     </Switch>
+                        
                  </div>
                 </BrowserRouter>
                 <div id="content">
