@@ -2,7 +2,9 @@ import React from 'react';
 import "../resources/stylesheets/ProfileCard.css";
 import Loader from "./Loader.js";
 import "../resources/stylesheets/Loader.css";
-import { render } from 'react-dom';
+import  render from 'react-dom';
+import  MessageIcon from '../resources/images/Messageicon.png';
+import  CallIcon from "../resources/images/call.png";
 
 class ProfileCard extends React.Component {
     constructor(props) {
@@ -27,7 +29,7 @@ class ProfileCard extends React.Component {
 
     render() {
 
-        var { RandomUser , loading } = this.state;
+        var { RandomUser, loading} = this.state;
 
         if(!loading) {
             return (
@@ -40,8 +42,11 @@ class ProfileCard extends React.Component {
 
             return (
                 <div className="ProfileCard">
+                    <div className="status">
+                        
+                    </div>
                     <header>
-                        <div className="profile-image">
+                        <div className="profile-image ">
                             {RandomUser.map(RandomUser => (
                                 <img src={RandomUser.picture.large} alt={RandomUser.name.first} />
                             ))}
@@ -54,6 +59,19 @@ class ProfileCard extends React.Component {
                                 <p id="name"> {RandomUser.name.first + " " + RandomUser.name.last} </p>
                             ))}
                         </div>
+                        <div className="icons-nav1">
+                            <img src={MessageIcon} alt="Message box" />
+                        </div>
+                        <div className="icons-nav2">
+                            <img src={CallIcon} alt="Call" />
+                        </div>
+                        <div className="ProfileLocation">
+                            {RandomUser.map(RandomUser => (
+                                <p id="location"> {RandomUser.location.city + " , " + RandomUser.location.country} </p>
+                            ))}
+                            
+                        </div>
+                        
                     </footer>
                 </div>
             );
@@ -61,37 +79,6 @@ class ProfileCard extends React.Component {
     }
 }
 
-render(<ProfileCard />, document.getElementById('root'));
 
 
-
-/*
-import axios from "axios";
-function ProfileCard() {
-    let randomNum = parseInt(Math.random() * 180);
-    const url = "https://picsum.photos/" + randomNum;
-
-
-    const fetchData = () => {
-        return axios.get("https://randomuser.me/api/")
-      .then((response) => console.log(response.data));
-    }
-   
-    
-    return (
-        <div className="ProfileCard">
-            <header>
-                <div className="profile-image">
-                    <img src={url} alt="Profile Photo" />
-                </div>
-            </header>
-            <footer>
-                <div className="ProfileName">
-                    <p></p>
-                </div>
-            </footer>
-        </div>
-    )
-}
-*/
 export default ProfileCard;

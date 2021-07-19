@@ -89,10 +89,9 @@ ul ul a {
 
 .wrapper {
     position: fixed;
-    overflow-y: scroll;
+    overflow-x: scroll;
     display: flex;
     width: 100%;
-    align-items: stretch;
 }
 
 #sidebar {

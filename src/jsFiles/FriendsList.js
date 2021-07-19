@@ -2,7 +2,11 @@ import React  from 'react'
 import ProfileCard from './ProfileCard';
 
 
+
+
 function FriendsList() {
+
+
     return (
         <div>
             <div className="row">
