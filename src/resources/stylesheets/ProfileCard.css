@@ -6,8 +6,8 @@
 
 
 .ProfileCard {
-    width: 180px;
-    height: 210px;
+    width: 220px;
+    height: 215px;
     border: 2px solid #fff;
     background-color: rgb(78, 3, 78);
     border-radius: 20px;
@@ -89,7 +89,7 @@
 }
 
 #name  {
-    font-size: 15px;
+    font-size: 13px;
     color: #fff;
 }
 

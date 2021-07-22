@@ -2,7 +2,6 @@ import React from 'react';
 import "../resources/stylesheets/ProfileCard.css";
 import Loader from "./Loader.js";
 import "../resources/stylesheets/Loader.css";
-import  render from 'react-dom';
 import  MessageIcon from '../resources/images/Messageicon.png';
 import  CallIcon from "../resources/images/call.png";
 
