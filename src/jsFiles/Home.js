@@ -1,8 +1,11 @@
 import React from 'react';
 import "../resources/stylesheets/Home.css";
 import FriendsList from './FriendsList';
-const Home = () => {
+import "../resources/stylesheets/HideFriendList.css";
 
+
+const Home = () => {
+    
     return (
         <div className="Home">
             <div className="ProfileCards">
@@ -13,7 +16,7 @@ const Home = () => {
                         <h4 id="title"> Friends </h4>
                         <hr id="hr"/>
                     </div>
-                     <FriendsList />
+                    <FriendsList />
                 </div>
         </div>
         </div>

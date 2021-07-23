@@ -2,6 +2,14 @@
   --colour-change : rgb(0, 128, 128);
 }
 
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #201f21;
+  color: #fff;
+  font-family: sans-serif;
+}
+
 .videoCont {
     display: none;
     width: 60vw;
@@ -37,10 +45,4 @@
     color: white;
 }
 
-body {
-  height: 100vh;
-  margin: 0;
-  background-color: #201f21;
-  color: #fff;
-  font-family: sans-serif;
-}
+

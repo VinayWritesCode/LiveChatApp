@@ -1,11 +1,9 @@
+import { shallowEqual } from '@babel/types';
 import React  from 'react'
 import ProfileCard from './ProfileCard';
 
 
-
-
 function FriendsList() {
-
 
     return (
         <div>

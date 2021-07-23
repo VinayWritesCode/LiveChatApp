@@ -4,6 +4,8 @@ import Loader from "./Loader.js";
 import "../resources/stylesheets/Loader.css";
 import  MessageIcon from '../resources/images/Messageicon.png';
 import  CallIcon from "../resources/images/call.png";
+import MessageBox from "./MessageBox";
+import "../resources/stylesheets/HideFriendList.css"
 
 class ProfileCard extends React.Component {
     constructor(props) {
@@ -12,6 +14,7 @@ class ProfileCard extends React.Component {
             RandomUser: [],
             loading: false
         };
+
     }
 
     componentDidMount(){
@@ -20,16 +23,20 @@ class ProfileCard extends React.Component {
         .then((reponse) => reponse.json())
         .then((reponse) => {
             this.setState({
-                RandomUser: reponse.results,
-                loading:true
+                image: reponse.results.map(reponse => (reponse.picture.large)),
+                firstName: reponse.results.map(reponse => (reponse.name.first)),
+                lastName: reponse.results.map(reponse => (reponse.name.last)),
+                city: reponse.results.map(reponse => (reponse.location.city)),
+                country: reponse.results.map(reponse => (reponse.location.country)),
+                loading: true
             })
         })
     }
 
     render() {
-
-        var { RandomUser, loading} = this.state;
-
+        var flag = 1;
+        var { image, firstName , lastName ,city, country, loading} = this.state;
+         
         if(!loading) {
             return (
                 <div className="LoaderContent">
@@ -39,40 +46,56 @@ class ProfileCard extends React.Component {
         }
         else {
 
+            const ShowMessageBox = () => {
+                let msgbox = document.querySelector('.MessageShow');
+                let ProfileCard = document.querySelector('.ProfileCard');
+
+                if (flag === 1){
+                    flag = 0;
+                     msgbox.classList.toggle('active');
+                    ProfileCard.classList.toggle('hide');
+                }
+                else if (flag === 0){
+                    flag = 1;
+                    msgbox.classList.remove('active');
+                    ProfileCard.classList.remove('hide');
+                }
+            }
+
             return (
+                <>
                 <div className="ProfileCard">
-                    <div className="status">
-                        
-                    </div>
+                    
                     <header>
                         <div className="profile-image ">
-                            {RandomUser.map(RandomUser => (
-                                <img src={RandomUser.picture.large} alt={RandomUser.name.first} />
-                            ))}
+                                <img src={image} alt={firstName} />
                         </div>
                     </header>
                     <footer>
                         <div className="ProfileName">
-                            
-                            {RandomUser.map(RandomUser => (
-                                <p id="name"> {RandomUser.name.first + " " + RandomUser.name.last} </p>
-                            ))}
+                                <p id="name"> {firstName + " " + lastName } </p>
                         </div>
-                        <div className="icons-nav1">
-                            <img src={MessageIcon} alt="Message box" />
-                        </div>
+                            <button onClick={ShowMessageBox} className="MsgBtn">
+                            <div className="icons-nav1">
+                                <img src={MessageIcon}   alt="Message box" />
+                            </div>
+                            </button>
                         <div className="icons-nav2">
                             <img src={CallIcon} alt="Call" />
                         </div>
                         <div className="ProfileLocation">
-                            {RandomUser.map(RandomUser => (
-                                <p id="location"> {RandomUser.location.city + " , " + RandomUser.location.country} </p>
-                            ))}
-                            
+                            <p id="location"> {city + " , " + country} </p>
                         </div>
                         
                     </footer>
+
+                    
                 </div>
+                    <div className="MessageShow">
+                        
+                             <MessageBox image={image} firstName={firstName} lastName={lastName}/>   
+                 </div>
+                </>
             );
         }
     }

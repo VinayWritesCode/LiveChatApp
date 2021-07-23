@@ -1,0 +1,8 @@
+.FriendList {
+    display: block;
+}
+
+.FriendList.close {
+    position: absolute;
+    left:200%
+}
