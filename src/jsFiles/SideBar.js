@@ -5,6 +5,7 @@ import "../resources/stylesheets/Sidebar.css";
 import "./SidebarLogic";
 import Camera from './Camera';
 import Home from './Home';
+import Status from './Status';
 import  CameraIcon from "../resources/images/Cameraicon.png";
 import { NavLink, BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
 
@@ -52,6 +53,7 @@ function SideBar() {
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/Camera" component={Camera} />
+                            <Route exact path="/Status" component={Status} />
                         <Redirect to="/" />
                     </Switch>
                         

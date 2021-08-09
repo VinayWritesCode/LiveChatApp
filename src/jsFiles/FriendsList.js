@@ -1,6 +1,5 @@
-import { shallowEqual } from '@babel/types';
-import React  from 'react'
-import ProfileCard from './ProfileCard';
+import React  from 'react';
+import User from './UserData';
 
 
 function FriendsList() {
@@ -10,18 +9,12 @@ function FriendsList() {
             <div className="row">
                 <div className="col-5 mx-auto">
                     <div className="row gy-4 mt-5">
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
-                        <ProfileCard />
+                        <User />
+                        <User />
+                        <User />
+                        <User />
+                        <User />
+                        <User />
                     </div>
                 </div>
             </div>

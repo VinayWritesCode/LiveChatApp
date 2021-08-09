@@ -148,20 +148,16 @@
      height: 22px;
 }
 
-.MessageShow {
-    display: none;
-    z-index: 500;
-}
-
-.MessageShow.active {
-    display: block;
-}
-
 .MsgBtn {
     background: transparent;
     border: none;
 }
 
+.CloseIcon{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
 
 @media (max-width: 450px) {
     .ProfileCard {
