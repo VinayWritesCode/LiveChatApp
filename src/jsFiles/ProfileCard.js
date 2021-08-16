@@ -31,7 +31,7 @@ function ProfileCard(props) {
             ProfileCard.classList.remove('hide');
         }
     }
-    ShowMessageBox()
+    
             return (
                 <>
                     <div className={MessageShow} id= "MessageShow">
